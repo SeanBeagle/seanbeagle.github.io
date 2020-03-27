@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Network Explorer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="https://strong-lab.github.io/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+  
+  
+<body>
+<div class="container">
+<h1>Mycobacterium Abscessus</h1>
+
+<div id="filters">
+  <input type="checkbox" id="same-facility" disabled="disabled">
+  <label for="same-facility" disabled>Same Facility</label>
+  <input type="checkbox" id="same-state" disabled>
+  <label for="same-state">Same State</label>
+  <label for="select-color">Color By:</label>
+  <select id="select-color" placeholder="Node Color"></select>
+  <p id="snp-threshold"></p>
+</div>
+
+<!-- SVG:#network and TABLE:"#node-profile" -->
+<div id="snp-slider"></div>
+<table>
+  <tr>
+    <td>
+      <svg id="network" width="700" height="700"></svg>
+    </td>
+    <td>
+      <table id="node-profile">
+      <tr><th>ID</th><td id="node-id"></td></tr>
+      <tr><th>TAXON</th><td id="node-taxon"></td></tr>
+      <tr><th>STATE</th><td id="node-state"></td></tr>
+      <tr><th>FACILITY</th><td id="node-facility"></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+<!-- TABLE:"#selected-nodes" -->
+  
+<div class="table-responsive"><table id="selected-nodes" class="table"></table></div>
+
+<script src="https://strong-lab.github.io/network.js"></script>
+</div>
+</body>
+</html>
+
