@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Network Explorer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+  
+  
+<body>
+<div class="container"> <!-- CONTAINER FOR WHOLE APPLICATION -->
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">DNA DataLab</a>
+        <ul class="nav navbar-nav">
+            <li><a href="#">File</a></li>
+            <li><a href="#">Edit</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+    <ul class="nav nav-tabs">
+      <li class="nav-item"><a class="nav-link" href="#">Data</a></li>
+      <li class="nav-item active"><a class="nav-link active" href="#">Network</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Tree</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Map</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Summary</a></li>
+    </ul>
+  </div>
+
+
+
+
+<div class="container"> <!-- APP MAIN WINDOW -->
+
+<h1 id="">Mycobacterium Abscessus</h1>
+
+<div id="filters">
+  <input type="checkbox" id="same-facility" disabled="disabled">
+  <label for="same-facility" disabled>Same Facility</label>
+  <input type="checkbox" id="same-state" disabled>
+  <label for="same-state">Same State</label>
+  <label for="select-color">Color By:</label>
+  <select id="select-color" placeholder="Node Color"></select>
+  <p id="snp-threshold"></p>
+</div>
+
+<!-- SVG:#network and TABLE:"#node-profile" -->
+<div id="network-widget">
+<div id="snp-slider"></div>
+<!-- <table>
+  <tr>
+    <td>
+      <svg id="network" width="700" height="700"></svg>
+    </td>
+    <td>
+      <table id="node-profile">
+      <tr><th>ID</th><td id="node-id"></td></tr>
+      <tr><th>TAXON</th><td id="node-taxon"></td></tr>
+      <tr><th>STATE</th><td id="node-state"></td></tr>
+      <tr><th>FACILITY</th><td id="node-facility"></td></tr>
+      </table>
+    </td>
+  </tr>
+</table> -->
+</div><!-- #network-widget -->
+
+
+<!-- TABLE:"#selected-nodes" -->
+  
+<div id="selected-nodes-widget"></div>
+
+<script src="network.js"></script>
+</div>
+</body>
+</html>
+
