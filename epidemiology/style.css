@@ -1,5 +1,10 @@
 body {
-	padding-top: 60px;
+	padding-top: 50px;
+}
+
+th {
+  text-align: right;
+  padding-right: 10px;
 }
 
 .links line {
@@ -12,7 +17,3 @@ body {
   stroke-width: 0px;
 }
 
-th {
-  text-align: right;
-  padding-right: 10px;
-}

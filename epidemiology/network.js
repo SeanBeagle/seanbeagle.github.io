@@ -1,4 +1,3 @@
-
 /* div:#network-widget */
 var slider = d3.select('#network-widget')
     .append("div").attr("id", "snp-slider");
@@ -83,6 +82,13 @@ d3.json(data, function(error, graph) {
       // .attr('cy', d => d.y);
       .attr('cx', function(d) { return d.x = Math.max(r, Math.min(width - r, d.x)); })
       .attr('cy', function(d) { return d.y = Math.max(r, Math.min(height - r, d.y)); });
+    } 
+
+    states = {};
+    graph.nodes.forEach(d => states[d.state] = states[d.state] ? states[d.state]+1 : 1);
+
+    for (var state in states) {
+      console.log(state + " : " + states[state]);
     }
     
   
@@ -106,27 +112,28 @@ d3.json(data, function(error, graph) {
     .style('width', '700px')                    // TODO(seanbeagle): delegate to CSS
     .style('display', 'block')                  // TODO(seanbeagle): delegate to CSS
     .on('input', function () {                  // TODO(seanbeagle): create separate function
-      var threshold = this.value;
-      slider.select('label').text(threshold);
-      // create array of links less than or equal to the threshold
-      var newData = [];
-      graph.links.forEach( function (d) {
-        if (d.snps <= threshold) {newData.push(d);};
-      });
+      console.log(value);
+      // var threshold = this.value;
+      // slider.select('label').text(threshold);
+      // // create array of links less than or equal to the threshold
+      // var newData = [];
+      // graph.links.forEach( function (d) {
+      //   if (d.snps <= threshold) {newData.push(d);};
+      // });
 
-      // Data join with filtered links
-      link = link.data(newData, d => d.source + ', ' + d.target);
-      link.exit().remove();
-      var linkEnter = link.enter().append('line').attr('class', 'link');
+      // // Data join with filtered links
+      // link = link.data(newData, d => d.source + ', ' + d.target);
+      // link.exit().remove();
+      // var linkEnter = link.enter().append('line').attr('class', 'link');
     
-      link = linkEnter.merge(link);
-      node = node.data(graph.nodes);
+      // link = linkEnter.merge(link);
+      // node = node.data(graph.nodes);
 
-      // Restart simulation with new link data
-      simulation
-        .nodes(graph.nodes).on('tick', ticked)
-        .force('link').links(newData);
-      simulation.alphaTarget(0.1).restart();
+      // // Restart simulation with new link data
+      // simulation
+      //   .nodes(graph.nodes).on('tick', ticked)
+      //   .force('link').links(newData);
+      // simulation.alphaTarget(0.1).restart();
       });    
     
 
@@ -158,6 +165,7 @@ d3.json(data, function(error, graph) {
         colorFilter = ColorSelector.property('value');
         node.attr('fill', d => color(d[colorFilter]))
     };
+
     
 });
 
