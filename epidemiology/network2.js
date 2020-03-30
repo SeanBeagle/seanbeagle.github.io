@@ -172,32 +172,32 @@ class Network {
   }
 
   /* ADD TABLE */
-  addTable() {
-    var tableID = this.widgetID + '-table';
-    this.table = this.widget
-      .append('table')
-      .attr('id', tableID)
-      .attr('class', 'table table-striped table-sm table-hover');
+  // addTable() {
+  //   var tableID = this.widgetID + '-table';
+  //   this.table = this.widget
+  //     .append('table')
+  //     .attr('id', tableID)
+  //     .attr('class', 'table table-striped table-sm table-hover');
 
-    this.table
-      .append('caption')
-      .text('Selected Nodes');
+  //   this.table
+  //     .append('caption')
+  //     .text('Selected Nodes');
 
-    var headers = ['Sample', 'Patient', 'Trial', 'State', 'Facility', 'Species', 'Clone'];
-    var headerRow = this.table
-      .append('thead')
-      .append('tr');
-    headers.forEach(header => headerRow.append("th").text(header));
+  //   var headers = ['Sample', 'Patient', 'Trial', 'State', 'Facility', 'Species', 'Clone'];
+  //   var headerRow = this.table
+  //     .append('thead')
+  //     .append('tr');
+  //   headers.forEach(header => headerRow.append("th").text(header));
 
-    this.table
-      .append('tbody');
-  }
+  //   this.table
+  //     .append('tbody');
+  // }
 
   addTable2() {
-    var tableID = this.widgetID + '-table';
-    this.table = this.widget
+    var myDataWidget = d3.select('#mydata-widget');
+    this.table = myDataWidget
       .append('table')
-      .attr('id', tableID)
+      .attr('id', "mydata-widget-table")
       .attr('class', 'table table-striped table-sm table-hover');
 
     this.table
@@ -210,7 +210,7 @@ class Network {
       .append('tr');
     this.headers.forEach(header => headerRow.append("th").text(header));
 
-    this.t = $('#' + tableID).DataTable();
+    this.t = $('#mydata-widget-table').DataTable();
   }
 
 

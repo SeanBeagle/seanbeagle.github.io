@@ -6,14 +6,15 @@
   <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
 
   <link rel='stylesheet' type='text/css' href='style.css'>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
-  <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/datatables.min.css'/>
+  <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
+  <!-- <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/datatables.min.css'> -->
+  <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css'>
   
   <script type='text/javascript' src='https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.20/datatables.min.js'></script>
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
   <script type='text/javascript' src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js'></script>
-  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>
-  <script src='https://d3js.org/d3.v4.min.js'></script>
+  <script type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>
+  <script type='text/javascript' src='https://d3js.org/d3.v4.min.js'></script>
 </head>
   
   
@@ -33,31 +34,47 @@
     </div>
   </nav>
 
-<h2 id=''>M. Abscessus</h2>
+<h2 id='species'>M. Abscessus</h2>
+
     <ul class='nav nav-tabs'>
-      <li class='nav-item'><a class='nav-link' href='#'>Data</a></li>
-      <li class='nav-item active'><a class='nav-link active' href='#'>Network</a></li>
-      <li class='nav-item'><a class='nav-link' href='#'>Tree</a></li>
-      <li class='nav-item'><a class='nav-link' href='map.html'>Map</a></li>
-      <li class='nav-item'><a class='nav-link' href='#'>Summary</a></li>
-      <li class='nav-item'><a class='nav-link' href='#'>MyData</a></li>
+      <li class='nav-item'><a data-toggle='tab' class='nav-link' href='#data-tab'>Data</a></li>
+      <li class='nav-item active'><a data-toggle='tab' class='nav-link active' href='#network-tab'>Network</a></li>
+      <li class='nav-item'><a data-toggle='tab' class='nav-link' href='#tree-tab'>Tree</a></li>
+      <li class='nav-item'><a data-toggle='tab' class='nav-link' href='#map-tab'>Map</a></li>
+      <li class='nav-item'><a data-toggle='tab' class='nav-link' href='#summary-tab'>Summary</a></li>
+      <li class='nav-item'><a data-toggle='tab' class='nav-link' href='#mydata-tab'>MyData</a></li>
     </ul>
+
+</div>
+
+
+
+<div class='container'>
+  <div class='tab-content'>
+    <div id='data-tab' class='tab-pane'>
+      <div id='data-widget'></div>
+    </div>
+    <div id='network-tab' class='tab-pane active'>
+      <div id='network-widget'></div>
+    </div>  
+    <div id='tree-tab' class='tab-pane'>
+      <div><h3>Tree</h3> <p>Functionality coming soon!</p></div>
+    </div>
+    <div id='map-tab' class='tab-pane'>
+      <h3>Map</h3> <p>Functionality coming soon!</p>
+    </div>
+    <div id='summary-tab' class='tab-pane'>
+      <h3>Summary</h3> <p>Functionality coming soon!</p>
+    </div>
+    <div id='mydata-tab' class='tab-pane'>
+      <div id='mydata-widget'></div>
+    </div>
   </div>
+</div>
 
-
-
-
-<div class='container'> 
-
-
-<div id='network-widget'></div>  
-<div id='selected-nodes-widget'></div>
-<div id='data-widget'></div>
-</div><!-- container -->
 
 <script src='network2.js'></script>
-<!-- <script src='sandbox.js'></script> -->
-
+<script src='sandbox.js'></script>
 </body>
 </html>
 
