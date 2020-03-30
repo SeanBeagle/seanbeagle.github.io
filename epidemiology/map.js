@@ -33,8 +33,8 @@ class Map {
 
 
 
-      var stateMeta = "https://raw.githubusercontent.com/SeanBeagle/seanbeagle.github.io/master/epidemiology/data/state-meta1.csv";
-      var usJSON = "https://raw.githubusercontent.com/SeanBeagle/seanbeagle.github.io/master/epidemiology/data/us-states.json";
+      var stateMeta = "https://raw.githubusercontent.com/SeanBeagle/seanbeagle.github.io/master/data/state-meta1.csv";
+      var usJSON = "https://raw.githubusercontent.com/SeanBeagle/seanbeagle.github.io/master/data/us-states.geo.json";
 
       d3.csv(stateMeta, function(data) {
         map.color.domain([d3.min(data, d => d.value),
