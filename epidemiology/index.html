@@ -19,7 +19,7 @@
   
   
 <body>
-<div class='container'> <!-- CONTAINER FOR WHOLE APPLICATION -->
+<div class='container' id='navigation'> <!-- CONTAINER FOR WHOLE APPLICATION -->
 
   <nav class='navbar navbar-inverse navbar-fixed-top'>
     <div class='container-fluid'>
@@ -49,7 +49,7 @@
 
 
 
-<div class='container'>
+<div class='container' id='content'>
   <div class='tab-content'>
     <div id='data-tab' class='tab-pane'>
       <div id='data-widget'></div>
@@ -61,7 +61,7 @@
       <div><h3>Tree</h3> <p>Functionality coming soon!</p></div>
     </div>
     <div id='map-tab' class='tab-pane'>
-      <h3>Map</h3> <p>Functionality coming soon!</p>
+      <div id='map-widget'></div>
     </div>
     <div id='summary-tab' class='tab-pane'>
       <h3>Summary</h3> <p>Functionality coming soon!</p>
@@ -72,9 +72,11 @@
   </div>
 </div>
 
-
-<script src='network2.js'></script>
+<!-- <script src='main.js'></script> -->
+<script src='network.js'></script>
+<script src='map.js'></script>
 <script src='sandbox.js'></script>
+
 </body>
 </html>
 
