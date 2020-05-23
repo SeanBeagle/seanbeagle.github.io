@@ -9,11 +9,12 @@
 
 <div class="container" id="books">empty</div>
   
-<script>$("<h5>Books</h5>").appendTo("#books")</script>
+<script>$("<h5>Books</h5>").appendTo("#books");</script>
   
 <script>  
   // EXTRACT RESOURCES FROM JSON AS <li> USING APA FORMAT
   $.getJSON( "resources.json", function(data) {
+    console.log(data);
     var items = [];
     $.each(data, function(r) {
       items.push( 
