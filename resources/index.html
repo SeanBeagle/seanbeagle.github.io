@@ -3,9 +3,27 @@
 <title>Sean Beagle's Development Portfolio</title>
 <link rel="stylesheet" href="https://seanbeagle.com/css/bootstrap4.min.css">
 <link rel="stylesheet" href="https://seanbeagle.com/css/style.css">
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
 
+
+<script>
+  $.getJSON( "resources.json", function(data) {
+    var items = [];
+    $.each(data, function(r) {
+      items.push( "<li>" + r.author + ".(" + r.year "). " + r.title + ". " + r.publisher + ": " + r.location + ".</li>");
+    });
+
+    $( "<ol/>", {
+      "class": "my-new-list",
+      html: items.join("")
+    }).appendTo("books");
+  });
+</script>
+  
+<div class="container" id="books"></div>
+  
 <div class="container">
   
 <h5>Linux</h5>
