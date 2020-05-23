@@ -7,9 +7,11 @@
 </head>
 <body>
 
-<div class="container" id="books"><h5>Books</h5></div>
-<script>
+<div class="container" id="books">empty</div>
   
+<script>$("<h5>Books</h5").appendTo("#books")</script>
+  
+<script>  
   // EXTRACT RESOURCES FROM JSON AS <li> USING APA FORMAT
   $.getJSON( "resources.json", function(data) {
     var items = [];
