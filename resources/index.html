@@ -13,7 +13,7 @@
   
 <script>  
   // EXTRACT RESOURCES FROM JSON AS <li> USING APA FORMAT
-  $.getJSON( "resources.json", function(data) {
+  $.getJSON("resources.json", function(data) {
     console.log(data);
     var items = [];
     $.each(data, function(r) {
@@ -21,7 +21,7 @@
         "<li>" + r.author + ". (" + r.year + "). " + r.title + ". " + r.publisher + ": " + r.location + ".</li>" 
       );
     });
-    $ ( "<span>These are my books</span>" ).appendTo("#books");
+    $("<span>These are my books</span>").appendTo("#books");
     
     // CREATE ORDERED LIST OF RESOURCES
     $( "<ol/>", {
