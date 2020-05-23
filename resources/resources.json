@@ -1,0 +1,57 @@
+
+[
+  {
+    "author":    "Barrett, D.J.", 
+    "year":      "2016",
+    "title":     "Linux pocket guide: Essential commands (3rd Ed)", 
+    "location":  "Sebastopool, CA",
+    "publisher": "O'Reilly Media",
+    "link":      "#",
+    "tags":      ["linux"]
+  },
+  {
+    "author":    "Blum, R., Breshnahan, C.", 
+    "year":      "2015",
+    "title":     "Linux command line and shell scripting bible (3rd Ed)", 
+    "location":  "Indianapolis, IN",
+    "publisher": "John Wiley & Sons",
+    "link":      "#",
+    "tags":      ["linux", "scripting"]
+  },
+  {
+    "author":    "Lutz, M.", 
+    "year":      "2014",
+    "title":     "Python pocket reference: Python in your pocket (5th Ed)", 
+    "location":  "Sebastopool, CA",
+    "publisher": "O'Reilly Media",
+    "link":      "#",
+    "tags":      ["python"]
+  },
+  {
+    "author":    "Gennick J.", 
+    "year":      "2011",
+    "title":     "SQL pocket guide (3rd Ed)", 
+    "location":  "Sebastopool, CA",
+    "publisher": "O'Reilly Media",
+    "link":      "#",
+    "tags":      ["sql"]
+  },
+  {
+    "author":    "Stephens, R.", 
+    "year":      "2015",
+    "title":     "Beginning Software Engineering", 
+    "location":  "Indianapolis, IN",
+    "publisher": "Wiley & Sons",
+    "link":      "#",
+    "tags":      ["programming"]
+  },
+  {
+    "author:    "White, E.", 
+    "year:      "2012",
+    "title:     "Making embedded systems", 
+    "location:  "Sebastopool, CA",
+    "publisher: "O'Reilly Media",
+    "link:      "#",
+    "tags:      ["embedded"]
+  },
+]
