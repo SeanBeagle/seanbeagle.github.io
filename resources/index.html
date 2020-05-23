@@ -17,10 +17,11 @@
     console.log(data);
     var items = [];
     $.each(data, function(r) {
-      items.push( 
-        "<li>" + r.author + ". (" + r.year + "). " + r.title + ". " + r.publisher + ": " + r.location + ".</li>" 
-      );
+      console.log(r);
+      var li = "<li>" + r.author + ". (" + r.year + "). " + r.title + ". " + r.publisher + ": " + r.location + ".</li>";
+      items.push(li);
     });
+    
     $("<span>These are my books</span>").appendTo("#books");
     
     // CREATE ORDERED LIST OF RESOURCES
