@@ -9,12 +9,15 @@
 
 <div class="container" id="books"></div>
  
-<script>  
+<script>
+  function formatBook(book) {
+   return book.author + ' (' + book.year + ').' + book.title + '. ' + book.location + ': ' + book.publisher;
+  }
   $('<h5/>').text('Books').appendTo('#books')
   $('<p/>').text('These are my books').appendTo('#books');
   console.log('GETTING RESOURCES!');
   $.getJSON('resources.json', data => {
-      data.forEach(item => $('<p/>').text(item.title).appendTo('#books'));
+      data.forEach(item => $('<p/>').text(formatBook(item)).appendTo('#books'));
   });
 </script>
   
