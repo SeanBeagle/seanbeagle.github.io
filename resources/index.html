@@ -9,7 +9,7 @@
 
 <div class="container" id="books"></div>
   
-<script>
+<!-- <script>
   var json = (function () {
     var json = null;
     $.ajax({
@@ -23,23 +23,16 @@
     return json;
   })();
   console.log(json)
-</script>
+</script> -->
   
 <script>
   $("<h5>Books</h5>").appendTo("#books")
   $("<p>These are my books</p>").appendTo("#books");
 </script>
   
-
-  
-  
 <script>  
-  // EXTRACT RESOURCES FROM JSON AS <li> USING APA FORMAT
-  var resources = [];
-  $.getJSON("resources.json", data => {
-    console.log(data)
-    $.forEach(data, item => console.log(item));
-  });
+  console.log('GETTING RESOURCES!');
+  $.getJSON('resources.json', data => console.log(data));
 </script>
   
 <!-- <script>  
