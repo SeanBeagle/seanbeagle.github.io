@@ -9,20 +9,21 @@
 
 <div class="container" id="books">empty</div>
   
-<script>$("<h5>Books</h5>").appendTo("#books");</script>
+<script>
+  $("#books").text("<h5>Books</h5>")
+  $("<span>These are my books</span>").appendTo("#books");
+</script>
   
 <script>  
   // EXTRACT RESOURCES FROM JSON AS <li> USING APA FORMAT
   $.getJSON("resources.json", function(data) {
     console.log(data);
     var items = [];
-    $.each(data, function(r) {
+    $.each(data, r => {
       console.log(r);
       var li = "<li>" + r.author + ". (" + r.year + "). " + r.title + ". " + r.publisher + ": " + r.location + ".</li>";
       items.push(li);
     });
-    
-    $("<span>These are my books</span>").appendTo("#books");
     
     // CREATE ORDERED LIST OF RESOURCES
     $( "<ol/>", {
