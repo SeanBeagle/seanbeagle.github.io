@@ -16,7 +16,7 @@
 <script>  
   console.log('GETTING RESOURCES!');
   $.getJSON('resources.json', data => {
-      data.forEach(item => $.('<li>'+ item.title +'</li>').append('#books'));
+      data.forEach(item => $('<li>'+ item.title +'</li>').append('#books'));
   });
 </script>
   
