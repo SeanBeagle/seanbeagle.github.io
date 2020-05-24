@@ -7,109 +7,24 @@
 </head>
 <body>
 
-<div class="container" id="books"></div>
+<div class="container" id="books">
+ <ol id="books-list">
+ </ol>
+</div>
  
 <script>
   function formatBook(book) {
-   return '<li>' + book.author + ' (' + book.year + '). <a href="' + book.url + '">' + book.title + '</a>. ' + book.location + ': ' + book.publisher + '</li>';
+   return '<li>' + book.author + ' (' + book.year + '). <a href="' + book.link + '">' + book.title + '</a>. ' + book.location + ': ' + book.publisher + '</li>';
   }
   $('<h5/>').text('Books').appendTo('#books')
   $('<p/>').text('These are my books').appendTo('#books');
   console.log('GETTING RESOURCES!');
   $.getJSON('resources.json', data => {
-      data.forEach(book => $(formatBook(book)).appendTo('#books'));
+      data.forEach(book => $(formatBook(book)).appendTo('#books-list'));
   });
 </script>
   
-
+    </div> <!-- #container -->
   
-<div class="container">
-  
-<h5>Linux</h5>
-<ol class="py-1">
-  <li>Barrett, D.J. (2016). <a href="#">Linux pocket guide: Essential commands (3rd Ed)</a>. Sebastopool, CA: O'Reilly Media.</li>
-  <li>Blum, R., Breshnahan, C. (2015). <a href="#">Linux command line and shell scripting bible (3rd Ed)</a>. Indianapolis, IN: John Wiley & Sons.</li>
-</ol>
-
-<h5>Python</h5>
-<ol>
-  <li>Lutz, M. (2014). <a href="#">Python pocket reference: Python in your pocket (5th Ed)</a>. Sebastopool, CA: O'Reilly Media.</li>
-</ol>
-  
-<h5>SQL</h5>
-<ol>
-  <li>Gennick J. (2011). <a href="#">SQL pocket guide (3rd Ed)</a>. Sebastopool, CA: O'Reilly Media.</li>
-</ol>
-
-<h5>General Programming</h5>
-<ol>
-  <li>Stephens, R. (2015). <a href="#">Beginning Software Engineering</a>. Indianapolis, IN: Wiley & Sons.</li>
-</ol>
-  
-<h5>Embedded Systems</h5>
-<ol>
-  <li>White, E. (2012). <a href="#">Making embedded systems</a>. Sebastopool, CA: O'Reilly Media.</li>
-</ol>
-  
-  
-  <div class="card" id="linux>
-    <h5 class="card-header">LINUX</h5>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        Barrett, D.J. (2016). Linux pocket guide: Essential commands (3rd Ed). Sebastopool, CA: O'Reilly Media
-      </li>
-      <li class="list-group-item">
-        Blum, R., Breshnahan, C. (2015). Linux command line and shell scripting bible (3rd Ed.). Indianapolis, IN: John Wiley & Sons.
-      </li>
-      <li class="list-group-item">
-        Gennick J. (2011). SQL pocket guide (3rd Ed). Sebastopool, CA: O'Reilly Media.
-      </li>
-    </ul>
-  </div><!-- .card#linux -->
-  
-  
-                                 
-  <div class="h4 py-1" id="linux">Linux</div>
- 
-  
-  
-  
-  
-  
-  
-    <div class="card my-1 border border-dark">
-      <h6 class="card-title p-1">
-        Barrett, D.J. (2016). Linux pocket guide: Essential commands (3rd Ed). Sebastopool, CA: O'Reilly Media
-      </h6><!-- .card-title -->
-    </div><!-- .card -->
-    
-    <div class="card"><div class="card-body">
-      Blum, R., Breshnahan, C. (2015). Linux command line and shell scripting bible (3rd Ed.). Indianapolis, IN: John Wiley & Sons.
-    </div></div>
-    
-    <div class="card"><div class="card-body">
-      Gennick J. (2011). SQL pocket guide (3rd Ed). Sebastopool, CA: O'Reilly Media.
-    </div></div>
-    
-    <div class="card"><div class="card-body">
-      Lutz. M. (2014). Python pocket reference: Python in your pocket (5th Ed.). Sebastopool, CA: O'Reilly Media.
-    </div></div>
-      
-    <div class="card"><div class="card-body">
-      Stephens, R. (2015). Beginning Software Engineering. Indianapolis, IN: Wiley & Sons.
-    </div></div>
-    
-    <div class="card"><div class="card-body">
-      Ward, B. (2014). How linux works: What every superuser should know (2nd Ed). San Francisco, CA: No Starch Press.
-    </div></div>
-  
-    <div class="h4 py-1" id="cpp">C++</div>
-  
-    <div class="card"><div class="card-body">
-      Stroustrup, B. (2018). A tour of C++ (2nd Ed). City, ST: Pearson Education.
-    </div></div>
-
-</div> <!-- #container -->
-  
-</body>
+  </body>
 </html>
