@@ -8,13 +8,10 @@
 <body>
 
 <div class="container" id="books"></div>
-  
-<script>
+ 
+<script>  
   $('<h5/>').text('Books').appendTo('#books')
   $('<p/>').text('These are my books').appendTo('#books');
-</script>
-  
-<script>  
   console.log('GETTING RESOURCES!');
   $.getJSON('resources.json', data => {
       data.forEach(item => $('<p/>').text(item.title).appendTo('#books'));
