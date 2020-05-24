@@ -9,13 +9,25 @@
 
 <div class="container" id="books"></div>
   
+  
+  
 <script>
   $("<h5>Books</h5>").appendTo("#books")
   $("<p>These are my books</p>").appendTo("#books");
 </script>
   
+
+  
+  
 <script>  
   // EXTRACT RESOURCES FROM JSON AS <li> USING APA FORMAT
+  var resources = [];
+  $.getJSON("resources.json", function(data) {
+    $.forEach(data, function(item){console.log(item)});
+  });
+</script>
+  
+<!-- <script>  
   $.getJSON("resources.json", function(data) {
     console.log(data);
     var items = [];
@@ -31,7 +43,7 @@
       html: items.join("")
     }).appendTo("#books");
   });
-</script>
+</script> -->
   
 
   
