@@ -8,6 +8,7 @@
 <body>
 
 <div class="container" id="books">
+ <h5>Books</h5>
  <ol id="books-list">
  </ol>
 </div>
@@ -16,8 +17,7 @@
   function formatBook(book) {
    return '<li>' + book.author + ' (' + book.year + '). <a href="' + book.link + '">' + book.title + '</a>. ' + book.location + ': ' + book.publisher + '</li>';
   }
-  $('<h5/>').text('Books').appendTo('#books')
-  $('<p/>').text('These are my books').appendTo('#books');
+ 
   console.log('GETTING RESOURCES!');
   $.getJSON('resources.json', data => {
       data.forEach(book => $(formatBook(book)).appendTo('#books-list'));
