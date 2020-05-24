@@ -8,23 +8,6 @@
 <body>
 
 <div class="container" id="books"></div>
-  
-<!-- <script>
-  var json = (function () {
-    var json = null;
-    $.ajax({
-      async: false,
-      global: false,
-      url: 'resources.json',
-      dataType: 'json',
-      success: data => json=data,
-      error: err => console.log(err)
-    });
-    return json;
-  })();
-  console.log(json)
-</script> -->
-  
 <script>
   $("<h5>Books</h5>").appendTo("#books")
   $("<p>These are my books</p>").appendTo("#books");
@@ -32,7 +15,7 @@
   
 <script>  
   console.log('GETTING RESOURCES!');
-  $.getJSON('resources.json', data => console.log(data));
+  $.getJSON('resources.json', data => data.forEach(item => console.log(item.title);
 </script>
   
 
