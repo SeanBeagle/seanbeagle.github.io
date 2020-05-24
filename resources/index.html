@@ -10,20 +10,18 @@
 <div class="container" id="books"></div>
   
 <script>
-var json = (function () {
+  var json = (function () {
     var json = null;
     $.ajax({
-        'async': false,
-        'global': false,
-        'url': 'resources.json',
-        'dataType': 'json',
-        'success': function (data) {
-            json = data;
-        }
-      return json
+      'async': false,
+      'global': false,
+      'url': 'resources.json',
+      'dataType': "json",
+      'success': data => json = data
     });
-    console.log(json);
-})();   
+    return json;
+  })();
+  console.log(json)
 </script>
   
 <script>
