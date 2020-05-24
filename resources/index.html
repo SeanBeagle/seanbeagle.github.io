@@ -11,7 +11,7 @@
  
 <script>
   function formatBook(book) {
-   return '<li>' + book.author + ' (' + book.year + '). ' + book.title + '. ' + book.location + ': ' + book.publisher + '</li>';
+   return '<li>' + book.author + ' (' + book.year + '). <a href="' + book.url + '">' + book.title + '</a>. ' + book.location + ': ' + book.publisher + '</li>';
   }
   $('<h5/>').text('Books').appendTo('#books')
   $('<p/>').text('These are my books').appendTo('#books');
