@@ -1,4 +1,3 @@
-
 [
   {
     "author":    "Barrett, D.J.", 
@@ -46,12 +45,12 @@
     "tags":      ["programming"]
   },
   {
-    "author:    "White, E.", 
-    "year:      "2012",
-    "title:     "Making embedded systems", 
-    "location:  "Sebastopool, CA",
-    "publisher: "O'Reilly Media",
-    "link:      "#",
-    "tags:      ["embedded"]
+    "author":    "White, E.", 
+    "year":      "2012",
+    "title":     "Making embedded systems", 
+    "location":  "Sebastopool, CA",
+    "publisher": "O'Reilly Media",
+    "link":      "#",
+    "tags":      ["embedded"]
   },
 ]
