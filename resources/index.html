@@ -13,11 +13,12 @@
   var json = (function () {
     var json = null;
     $.ajax({
-      'async': false,
-      'global': false,
-      'url': 'resources.json',
-      'dataType': 'json',
-      'success': data => json=data
+      async: false,
+      global: false,
+      url: 'resources.json',
+      dataType: 'json',
+      success: data => json=data,
+      error: err => console.log(err)
     });
     return json;
   })();
