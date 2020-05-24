@@ -10,23 +10,19 @@
 <div class="container" id="books"></div>
   
 <script>
-$.ajax({
-  type: "GET", 
-  url: "resources.json",
-  dataType: "json", 
-  success: response => {
-    console.log(response);
-    var json_obj = $.parseJSON(response);
-  },
-  error: response => {
-    
-//     for (var i in json_obj) {
-//       output+="<li>" + json_obj[i].Language + ",  " + json_obj[i].ID + "</li>";
-//     }
-//     output+="</ul>";
-//     $('span').html(output);
-  }
-})      
+var json = (function () {
+    var json = null;
+    $.ajax({
+        'async': false,
+        'global': false,
+        'url': 'resources.json',
+        'dataType': 'json',
+        'success': function (data) {
+            json = data;
+        }
+    });
+    console.log(json);
+})();   
 </script>
   
 <script>
