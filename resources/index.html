@@ -22,8 +22,9 @@
 <script>  
   // EXTRACT RESOURCES FROM JSON AS <li> USING APA FORMAT
   var resources = [];
-  $.getJSON("resources.json", function(data) {
-    $.forEach(data, function(item){console.log(item)});
+  $.getJSON("resources.json", data => {
+    console.log(data)
+    $.forEach(data, item => console.log(item));
   });
 </script>
   
