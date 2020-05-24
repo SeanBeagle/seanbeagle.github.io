@@ -35,24 +35,6 @@
   $.getJSON('resources.json', data => console.log(data));
 </script>
   
-<!-- <script>  
-  $.getJSON("resources.json", function(data) {
-    console.log(data);
-    var items = [];
-    $.each(data, r => {
-      console.log(r);
-      var li = "<li>" + r.author + ". (" + r.year + "). " + r.title + ". " + r.publisher + ": " + r.location + ".</li>";
-      items.push(li);
-    });
-    
-    // CREATE ORDERED LIST OF RESOURCES
-    $( "<ol/>", {
-      "class": "my-new-list",
-      html: items.join("")
-    }).appendTo("#books");
-  });
-</script> -->
-  
 
   
 <div class="container">
