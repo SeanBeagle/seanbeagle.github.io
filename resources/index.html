@@ -15,9 +15,9 @@
     $.ajax({
       'async': false,
       'global': false,
-      'url': 'resources.json',
-      'dataType': "json",
-      'success': data => json = data
+      'url': 'https://www.seanbeagle.com/resources/resources.json',
+      'dataType': 'jsonp',
+      'success': data => (json = data)
     });
     return json;
   })();
