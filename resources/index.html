@@ -11,13 +11,13 @@
  
 <script>
   function formatBook(book) {
-   return book.author + ' (' + book.year + ').' + book.title + '. ' + book.location + ': ' + book.publisher;
+   return '<li>' + book.author + ' (' + book.year + '). ' + book.title + '. ' + book.location + ': ' + book.publisher + '</li>';
   }
   $('<h5/>').text('Books').appendTo('#books')
   $('<p/>').text('These are my books').appendTo('#books');
   console.log('GETTING RESOURCES!');
   $.getJSON('resources.json', data => {
-      data.forEach(item => $('<p/>').text(formatBook(item)).appendTo('#books'));
+      data.forEach(book => $(formatBook(book)).appendTo('#books'));
   });
 </script>
   
