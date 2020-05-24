@@ -1,4 +1,4 @@
-{[
+{
   {
     "author":    "Barrett, D.J.", 
     "year":      "2016",
@@ -52,5 +52,5 @@
     "publisher": "O'Reilly Media",
     "link":      "#",
     "tags":      ["embedded"]
-  },
-]}
+  }
+}
