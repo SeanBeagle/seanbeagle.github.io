@@ -9,7 +9,23 @@
 
 <div class="container" id="books"></div>
   
-  
+<script>
+$.ajax({
+  type: "GET", 
+  url: "resources.json",
+  dataType: "json", 
+  success: response => {
+    console.log(response);
+    var json_obj = $.parseJSON(response);
+    
+//     for (var i in json_obj) {
+//       output+="<li>" + json_obj[i].Language + ",  " + json_obj[i].ID + "</li>";
+//     }
+//     output+="</ul>";
+//     $('span').html(output);
+  }
+})      
+</script>
   
 <script>
   $("<h5>Books</h5>").appendTo("#books")
