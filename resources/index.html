@@ -17,6 +17,8 @@ $.ajax({
   success: response => {
     console.log(response);
     var json_obj = $.parseJSON(response);
+  },
+  error: response => {
     
 //     for (var i in json_obj) {
 //       output+="<li>" + json_obj[i].Language + ",  " + json_obj[i].ID + "</li>";
