@@ -4,7 +4,7 @@ function formatBook(book) {
    return '<li>' + book.author + ' (' + book.year + '). <a href="' + book.link + '">' + book.title + '</a>. ' + book.location + ': ' + book.publisher + '</li>';
 }
 
-var books = [];
+var books=[], blogs=[], articles=[]; // extracted from resources.json
 $.getJSON('resources.json', d => d.forEach(book => books.push(book)));
 
 /* BUILD HTML FRAMEWORK */
@@ -18,6 +18,7 @@ $('<h5/>').text('Blogs').appendTo('#blogs');
 // add books
 console.log('...adding books');
 console.log(books);
+books.forEach(console.log('BOOK!'));
 books.forEach(item => $(formatBook(item)).appendTo('#books'));
 //books.forEach(item => console.log(item));
 //books.forEach(item => console.log(item.title));
