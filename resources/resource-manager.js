@@ -35,6 +35,7 @@ if (books.length > 0) {  // INCLUDE: #books
      $(formatBook(item)).appendTo('#book-list');
      $('<li class="other-item">other item ' + i++ + '</li>').appendTo('#book-list');
   });
+}
    
 if (blogs.length > 0) {  // INCLUDE: #blogs
   blogs.sort((a,b) => a < b);
