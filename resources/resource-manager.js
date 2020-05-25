@@ -20,7 +20,7 @@ $('<div/>').attr('id', 'filters').appendTo('#resources');
 if (books.length > 0) {  // INCLUDE: #books
   $('<label/>')
      .attr('id', 'books-select')
-     .text('books(' + books.length + ')')
+     .text('books(' + books.length + ') ')
      .appendTo('#filters');
   $('<input/>')
      .attr('type', 'checkbox')
@@ -31,7 +31,7 @@ if (books.length > 0) {  // INCLUDE: #books
    
   books.sort((a,b) => a.author < b.author);
   $('<div/>').attr('id', 'books').appendTo('#resources');
-  $('<h5/>').text('Books (' + books.length + ')').appendTo('#books');
+  $('<h5/>').text('Books').appendTo('#books');
   $('<ol/>').attr('id', 'book-list').appendTo('#books');
   books.forEach(item => $(formatBook(item)).appendTo('#book-list'));
 }
