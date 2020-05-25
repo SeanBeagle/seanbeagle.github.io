@@ -17,11 +17,11 @@ $('<h5/>').text('Blogs').appendTo('#blogs');
 
 // Add books to HTML
 books.sort((a, b) => a.author < b.author);
-books.forEach(book => $(formatBook(book)).appendTo('#books-list'));
+books.forEach(book => $(formatBook(book)).appendTo('#books'));
 books.forEach(item => console.log(item));
 books.forEach(item => console.log(item.title));
-$('<li/>').text('test item').appendTo('#books-list');
+$('<li/>').text('test item').appendTo('#books');
 console.log(books);
 
 var arr = ['a', 'b', 'c', 'd'];
-arr.forEach(item => console.log(item));
+arr.forEach(item => $('<li>'+item+</li>).appendTo('#books');
