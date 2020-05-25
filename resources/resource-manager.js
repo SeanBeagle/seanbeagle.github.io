@@ -3,7 +3,7 @@ function formatBook(book) {
    return '<li>' + book.author + ' (' + book.year + '). <a href="' + book.link + '">' + book.title + '</a>. ' + book.location + ': ' + book.publisher + '</li>';
 }
 
-books = [];
+var books = [];
 $.getJSON('resources.json', data => {
     data.forEach(book => books.push(book));
 });
@@ -13,3 +13,6 @@ books.forEach(item => console.log(item));
 books.forEach(item => console.log(item.title));
 $('<li/>').text('test item').appendTo('#books-list');
 console.log(books);
+
+var arr = ['a', 'b', 'c', 'd'];
+arr.forEach(item => console.log(item));
