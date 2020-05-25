@@ -5,7 +5,7 @@ function formatBook(book) {
 }
 
 var books=[], blogs=[], articles=[]; // extracted from resources.json
-// TODO(seanbeagle): Create Functions for each resource type
+/* TODO(seanbeagle): Create Functions for each resource type */
 $.ajax({
   url: 'resources.json',
   dataType: 'json',
@@ -15,16 +15,19 @@ $.ajax({
 
 /* BUILD HTML */
 $('<h1/>').text('Resources').appendTo('#resources');
-$('<div/>').attr('id', 'show').appendTo('#resources');
+$('<div/>').attr('id', 'filters').appendTo('#resources');
 
-if (books.length > 0) { // INCLUDE: #books
-  var checkbox = $('<input/>')
+if (books.length > 0) {  // INCLUDE: #books
+  $('<label/>')
+     .attr('id', 'books-select')
+     .text('books(' + books.length + ')')
+     .appendTo('#filters');
+  $('<input/>')
      .attr('type', 'checkbox')
      .attr('name', 'resourceCheckbox')
      .attr('value', 'books')
      .prop('checked', true)
-     .text('books(' + books.length + ')');
-  checkbox.appendTo('#show');
+     .appendTo('#books-select');
    
   books.sort((a,b) => a.author < b.author);
   $('<div/>').attr('id', 'books').appendTo('#resources');
@@ -32,7 +35,7 @@ if (books.length > 0) { // INCLUDE: #books
   $('<ol/>').attr('id', 'book-list').appendTo('#books');
   books.forEach(item => $(formatBook(item)).appendTo('#book-list'));
 }
-if (blogs.length > 0) { // INCLUDE: #blogs
+if (blogs.length > 0) {  // INCLUDE: #blogs
   blogs.sort((a,b) => a < b);
   $('<div/>').attr('id', 'blogs').appendTo('#resources');
   $('<h5/>').text('Blogs (' + blogs.length + ')').appendTo('#blogs');
