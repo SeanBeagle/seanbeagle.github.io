@@ -10,7 +10,7 @@ $.getJSON('resources.json', d => d.forEach(book => books.push(book)));
 /* BUILD HTML FRAMEWORK */
 // books
 $('<ol/>').attr('id', 'books').appendTo('#resources');
-$('<h5/>').text('Books (' + books.length() + ')').appendTo('#books');
+$('<h5/>').text('Books (' + books.length + ')').appendTo('#books');
 // blogs
 $('<ol/>').attr('id', 'blogs').appendTo('#resources');
 $('<h5/>').text('Blogs').appendTo('#blogs');
