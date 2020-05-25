@@ -13,7 +13,7 @@
  </ol>
 </div>
  
-<script>
+<!-- <script>
   function formatBook(book) {
    return '<li>' + book.author + ' (' + book.year + '). <a href="' + book.link + '">' + book.title + '</a>. ' + book.location + ': ' + book.publisher + '</li>';
   }
@@ -22,9 +22,11 @@
   $.getJSON('resources.json', data => {
       data.forEach(book => $(formatBook(book)).appendTo('#books-list'));
   });
-</script>
+</script> -->
   
     </div> <!-- #container -->
   
   </body>
 </html>
+
+<script src="resource-manager.js"></script>
