@@ -1,11 +1,11 @@
-$.getJSON( "resources.json", function(data) {
-  var items = [];
-  $.each(data, function(r) {
-    items.push( "<li>" + r.author + ".(" + r.year "). " + r.title + ". " + r.publisher + ": " + r.location + ".</li>");
-  });
+function formatBook(book) {
+   return '<li>' + book.author + ' (' + book.year + '). <a href="' + book.link + '">' 
+   + book.title + '</a>. ' + book.location + ': ' + book.publisher + '</li>';
+}
 
-  $( "<ol/>", {
-    "class": "my-new-list",
-    html: items.join("")
-  }).appendTo("books");
+books = [];
+$.getJSON('resources.json', data => {
+    data.forEach(book => books.push(book));
 });
+books.sort(item => item.author)
+books.forEach(book => $(formatBook(book)).appendTo('#books-list'));
