@@ -1,38 +1,31 @@
-console.log('Loading resource-manager.js');
+console.log('LOADING: resource-manager.js');
 
 function formatBook(book) {
    return '<li>' + book.author + ' (' + book.year + '). <a href="' + book.link + '">' + book.title + '</a>. ' + book.location + ': ' + book.publisher + '</li>';
 }
 
-var books=[], blogs=[], articles=[]; // extracted from resources.json
-//$.getJSON('resources.json', d => d.forEach(book => books.push(book)));
-
+var book_items=[], blogs=[], articles=[]; // extracted from resources.json
+// TODO(seanbeagle): Create Functions for each resource type
 $.ajax({
   url: 'resources.json',
   dataType: 'json',
   async: false,
-  //data: myData,
-  success: function(data) {
-    data.forEach(book => books.push(book));
-  }
+  success: data => data.forEach(item => books.push(item))
 });
 
-/* BUILD HTML FRAMEWORK */
-// books
-$('<ol/>').attr('id', 'books').appendTo('#resources');
-$('<h5/>').text('Books (' + books.length + ')').appendTo('#books');
-// blogs
-$('<ol/>').attr('id', 'blogs').appendTo('#resources');
-$('<h5/>').text('Blogs').appendTo('#blogs');
+/* BUILD HTML */
+if (books.length > 0) { // INCLUDE: #books
+  books.sort((a,b) => a < b);
+  $('<div/>').attr('id', 'books').appendTo('#resources');
+  $('<h5/>').text('Books (' + books.length + ')').appendTo('#books');
+  $('<ol/>').attr('id', 'book-list').appendTo('#books');
+  books.forEach(item => $(formatBook(item)).appendTo('#book-list'));
+}
+if (blogs.length > 0) { // INCLUDE: #blogs
+  blogs.sort((a,b) => a < b);
+  $('<div/>').attr('id', 'blogs').appendTo('#resources');
+  $('<h5/>').text('Blogs (' + blogs.length + ')').appendTo('#blogs');
+  $('<ol/>').attr('id', 'blog-list').appendTo('#blogs');
+  blogs.forEach(item => $(formatBook(item)).appendTo('#blog-list'));
+}
 
-// add books
-console.log('...adding books');
-console.log(books);
-books.forEach( () => console.log('BOOK!') );
-books.forEach( item => $(formatBook(item)).appendTo('#books') );
-//books.forEach(item => console.log(item));
-//books.forEach(item => console.log(item.title));
-
-
-var arr = ['a', 'b', 'c', 'd'];
-arr.forEach(item => $('<li>'+item+'</li>').appendTo('#blogs'));
