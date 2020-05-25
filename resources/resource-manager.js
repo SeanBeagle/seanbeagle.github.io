@@ -18,16 +18,14 @@ $('<h1/>').text('Resources').appendTo('#resources');
 $('<div/>').attr('id', 'filters').appendTo('#resources');
 
 if (books.length > 0) {  // INCLUDE: #books
-  $('<label/>')
-     .attr('id', 'books-select')
-     .text('books(' + books.length + ') ')
-     .appendTo('#filters');
+  $('<label/>').attr('id', 'books-select').appendTo('#filters');
   $('<input/>')
      .attr('type', 'checkbox')
      .attr('name', 'resourceCheckbox')
      .attr('value', 'books')
      .prop('checked', true)
      .appendTo('#books-select');
+  $('#books-select').text('books (' + books.length + ') ');
    
   books.sort((a,b) => a.author < b.author);
   $('<div/>').attr('id', 'books').appendTo('#resources');
