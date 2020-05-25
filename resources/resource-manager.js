@@ -15,8 +15,17 @@ $.ajax({
 
 /* BUILD HTML */
 $('<h1/>').text('Resources').appendTo('#resources');
+$('<div/>').attr('id', 'show').appendTo('#resources');
 
 if (books.length > 0) { // INCLUDE: #books
+  var checkbox = $('<label/>')
+     .attr('type', 'checkbox')
+     .attr('name', 'resourceCheckbox')
+     .attr('value', 'books')
+     .prop('checked', true)
+     .text('books(' + books.length + ')');
+  checkbox.appendTo('#show');
+   
   books.sort((a,b) => a.author < b.author);
   $('<div/>').attr('id', 'books').appendTo('#resources');
   $('<h5/>').text('Books (' + books.length + ')').appendTo('#books');
