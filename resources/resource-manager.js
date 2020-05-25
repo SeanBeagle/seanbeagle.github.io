@@ -32,8 +32,8 @@ if (books.length > 0) {  // INCLUDE: #books
   $('<h5/>').text('Books').appendTo('#books');
   $('<ol/>').attr('id', 'book-list').appendTo('#books');
   books.forEach(item => {
-     $(formatBook(item)).appendTo('#book-list'));
-     $('<li class="other-item">other item ' + i++ + '</li>').appendTo('#book-list'));
+     $(formatBook(item)).appendTo('#book-list');
+     $('<li class="other-item">other item ' + i++ + '</li>').appendTo('#book-list');
   }
 }
 if (blogs.length > 0) {  // INCLUDE: #blogs
