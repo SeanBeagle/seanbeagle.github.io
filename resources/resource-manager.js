@@ -15,7 +15,7 @@ $.ajax({
 
 /* BUILD HTML */
 if (books.length > 0) { // INCLUDE: #books
-  books.sort((a,b) => a < b);
+  books.sort((a,b) => a.author < b.author);
   $('<div/>').attr('id', 'books').appendTo('#resources');
   $('<h5/>').text('Books (' + books.length + ')').appendTo('#books');
   $('<ol/>').attr('id', 'book-list').appendTo('#books');
