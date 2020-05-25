@@ -15,13 +15,13 @@ $('<h5/>').text('Books').appendTo('#books');
 $('<ol/>').attr('id', 'blogs').appendTo('#resources');
 $('<h5/>').text('Blogs').appendTo('#blogs');
 
-// Add books to HTML
-books.sort((a, b) => a.author < b.author);
-books.forEach(book => $(formatBook(book)).appendTo('#books'));
-books.forEach(item => console.log(item));
-books.forEach(item => console.log(item.title));
-$('<li/>').text('test item').appendTo('#books');
+// add books
+console.log('...adding books');
 console.log(books);
+books.forEach(item => $(formatBook(item)).appendTo('#books'));
+//books.forEach(item => console.log(item));
+//books.forEach(item => console.log(item.title));
+
 
 var arr = ['a', 'b', 'c', 'd'];
-arr.forEach(item => $('<li>'+item+'</li>').appendTo('#books'));
+arr.forEach(item => $('<li>'+item+'</li>').appendTo('#blogs'));
