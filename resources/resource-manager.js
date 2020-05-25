@@ -10,3 +10,4 @@ $.getJSON('resources.json', data => {
 });
 books.sort(item => item.author);
 books.forEach(book => $(formatBook(book)).appendTo('#books-list'));
+console.log(books);
