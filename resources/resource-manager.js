@@ -25,7 +25,7 @@ if (books.length > 0) {  // INCLUDE: #books
      .attr('value', 'books')
      .prop('checked', true)
      .appendTo('#books-select');
-  $('<span/'>).text('books (' + books.length + ')').appendTo('#books-select');
+  $('<span/>').text('books (' + books.length + ')').appendTo('#books-select');
    
   books.sort((a,b) => a.author < b.author);
   $('<div/>').attr('id', 'books').appendTo('#resources');
