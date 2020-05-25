@@ -5,7 +5,17 @@ function formatBook(book) {
 }
 
 var books=[], blogs=[], articles=[]; // extracted from resources.json
-$.getJSON('resources.json', d => d.forEach(book => books.push(book)));
+//$.getJSON('resources.json', d => d.forEach(book => books.push(book)));
+
+$.ajax({
+  url: 'resources.json',
+  dataType: 'json',
+  async: false,
+  //data: myData,
+  success: function(data) {
+    data.forEach(book => books.push(book));
+  }
+});
 
 /* BUILD HTML FRAMEWORK */
 // books
