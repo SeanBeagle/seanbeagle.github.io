@@ -26,12 +26,15 @@ if (books.length > 0) {  // INCLUDE: #books
      .prop('checked', true)
      .appendTo('#books-select');
   $('<span/>').text(' books (' + books.length + ')').appendTo('#books-select');
-   
+  var i = 1;
   books.sort((a,b) => a.author < b.author);
   $('<div/>').attr('id', 'books').appendTo('#resources');
   $('<h5/>').text('Books').appendTo('#books');
   $('<ol/>').attr('id', 'book-list').appendTo('#books');
-  books.forEach(item => $(formatBook(item)).appendTo('#book-list'));
+  books.forEach(item => {
+     $(formatBook(item)).appendTo('#book-list'));
+     $('<li class="other-item">other item ' + i++ + '</li>).appendTo('#book-list'));
+  }
 }
 if (blogs.length > 0) {  // INCLUDE: #blogs
   blogs.sort((a,b) => a < b);
