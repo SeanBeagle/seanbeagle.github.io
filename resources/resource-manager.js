@@ -18,7 +18,7 @@ $('<h1/>').text('Resources').appendTo('#resources');
 $('<div/>').attr('id', 'show').appendTo('#resources');
 
 if (books.length > 0) { // INCLUDE: #books
-  var checkbox = $('<label/>')
+  var checkbox = $('<input/>')
      .attr('type', 'checkbox')
      .attr('name', 'resourceCheckbox')
      .attr('value', 'books')
