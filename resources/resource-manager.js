@@ -24,4 +24,4 @@ $('<li/>').text('test item').appendTo('#books');
 console.log(books);
 
 var arr = ['a', 'b', 'c', 'd'];
-arr.forEach(item => $('<li>'+item+</li>).appendTo('#books');
+arr.forEach(item => $('<li>'+item+</li>).appendTo('#books'));
