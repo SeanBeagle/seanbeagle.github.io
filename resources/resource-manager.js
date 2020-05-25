@@ -8,7 +8,7 @@ books = [];
 $.getJSON('resources.json', data => {
     data.forEach(book => books.push(book));
 });
-books.sort(item => item.author);
+books.sort((a, b) => a.author < b.author);
 books.forEach(book => $(formatBook(book)).appendTo('#books-list'));
 $('<li/>').text('test item').appendTo('#books-list');
 console.log(books);
