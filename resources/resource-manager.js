@@ -4,7 +4,7 @@ function formatBook(book) {
    return '<li>' + book.author + ' (' + book.year + '). <a href="' + book.link + '">' + book.title + '</a>. ' + book.location + ': ' + book.publisher + '</li>';
 }
 
-var book_items=[], blogs=[], articles=[]; // extracted from resources.json
+var books=[], blogs=[], articles=[]; // extracted from resources.json
 // TODO(seanbeagle): Create Functions for each resource type
 $.ajax({
   url: 'resources.json',
