@@ -18,8 +18,8 @@ $('<h5/>').text('Blogs').appendTo('#blogs');
 // add books
 console.log('...adding books');
 console.log(books);
-books.forEach(console.log('BOOK!'));
-books.forEach(item => $(formatBook(item)).appendTo('#books'));
+books.forEach( () => console.log('BOOK!') );
+books.forEach( item => $(formatBook(item)).appendTo('#books') );
 //books.forEach(item => console.log(item));
 //books.forEach(item => console.log(item.title));
 
