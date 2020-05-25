@@ -1,7 +1,7 @@
 console.log('LOADING: resource-manager.js');
 
 function formatBook(book) {
-   return '<li>' + book.author + ' (' + book.year + '). <a href="' + book.link + '">' + book.title + '</a>. ' + book.location + ': ' + book.publisher + '</li>';
+   return '<li class="book-resource">' + book.author + ' (' + book.year + '). <a href="' + book.link + '">' + book.title + '</a>. ' + book.location + ': ' + book.publisher + '</li>';
 }
 
 var books=[], blogs=[], articles=[]; // extracted from resources.json
@@ -22,7 +22,7 @@ if (books.length > 0) {  // INCLUDE: #books
   $('<input/>')
      .attr('type', 'checkbox')
      .attr('name', 'resourceCheckbox')
-     .attr('value', 'books')
+     .attr('value', 'book-resource')
      .prop('checked', true)
      .appendTo('#books-select');
   $('<span/>').text(' books (' + books.length + ')').appendTo('#books-select');
@@ -44,7 +44,7 @@ if (blogs.length > 0) {  // INCLUDE: #blogs
 $(document).ready(function(){
     $('input[type="checkbox"]').click(function(){
         var inputValue = $(this).attr("value");
-        $("#" + inputValue).toggle();
+        $("." + inputValue).toggle();
     });
 });
 
