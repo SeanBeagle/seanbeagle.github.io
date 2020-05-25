@@ -9,6 +9,7 @@ $.getJSON('resources.json', data => {
 });
 books.sort((a, b) => a.author < b.author);
 books.forEach(book => $(formatBook(book)).appendTo('#books-list'));
-books.forEach(book => console.log(book));
+books.forEach(item => console.log(item));
+books.forEach(item => console.log(item.title));
 $('<li/>').text('test item').appendTo('#books-list');
 console.log(books);
