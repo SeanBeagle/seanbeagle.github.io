@@ -29,3 +29,10 @@ if (blogs.length > 0) { // INCLUDE: #blogs
   blogs.forEach(item => $(formatBook(item)).appendTo('#blog-list'));
 }
 
+$(document).ready(function(){
+    $('input[type="checkbox"]').click(function(){
+        var inputValue = $(this).attr("value");
+        $("#" + inputValue).toggle();
+    });
+});
+
